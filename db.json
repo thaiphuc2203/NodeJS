@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "name": "Thai Phuc",
+      "id": "BLQ8VoL2"
+    },
+    {
+      "name": "phuc Thai",
+      "id": "iD7gSYIT"
+    },
+    {
+      "phone": "0335800436",
+      "id": "oYiM4zXD"
+    },
+    {
+      "name": "testJavascript",
+      "phone": "0335800436",
+      "id": "fH2gbdoT"
+    },
+    {
+      "name": "Lương",
+      "phone": "0999999",
+      "id": "JYNvEWRp"
+    },
+    {
+      "name": "Thai",
+      "phone": "0335800436",
+      "id": "sq8y_pk8"
+    }
+  ]
+}
