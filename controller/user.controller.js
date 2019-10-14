@@ -5,16 +5,18 @@ module.exports.index=  (req, res) =>
     users: db.get("users").value()
   })
 module.exports.search = (req, res) => {
-  let users = db.get("users");
+  let users = db.get("users").value();
   let q = req.query.q;
-  let matcheUsers = db.get("users").filter(user => {
+  let matcheUsers = users.filter((user) => {
     return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
   });
-  res.render("/index", {
+  console.log({q,users})
+  res.render("users/index", {
     users: matcheUsers
   });
 };
 module.exports.create = (req, res) => {
+  console.log(req.cookies)
   res.render("users/create");
 };
 module.exports.get = (req, res) => {

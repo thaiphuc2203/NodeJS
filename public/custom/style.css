@@ -6,3 +6,14 @@
     opacity: 1;
     background-position: center center;
 }
+.login{
+    float:right;
+    width: 64px;
+    height: 64px;
+    font-size: 30px;
+    color: black;
+}
+.login:hover{
+    text-decoration: none;
+    color: white;
+}
