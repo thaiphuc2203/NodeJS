@@ -6,17 +6,16 @@ module.exports.index=  (req, res) =>
   })
 module.exports.search = (req, res) => {
   let users = db.get("users").value();
+  console.log(users);
   let q = req.query.q;
   let matcheUsers = users.filter((user) => {
     return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
   });
-  console.log({q,users})
   res.render("users/index", {
     users: matcheUsers
   });
 };
 module.exports.create = (req, res) => {
-  console.log(req.cookies)
   res.render("users/create");
 };
 module.exports.get = (req, res) => {
@@ -31,6 +30,8 @@ module.exports.get = (req, res) => {
 };
 module.exports.postCreate = (req, res) => {
   req.body.id = shortid.generate();
+  let a = req.file.path;
+  req.body.avatar = a.slice(7,a.length)
   db.get("users")
     .push(req.body)
     .write();

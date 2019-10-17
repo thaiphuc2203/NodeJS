@@ -17,3 +17,11 @@
     text-decoration: none;
     color: white;
 }
+.imgAvatar{
+    width:32px;
+    height: 32px;
+}
+.imageProduct{
+    color: black;
+    margin-bottom: 30px;
+}
