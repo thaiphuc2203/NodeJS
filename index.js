@@ -8,6 +8,7 @@ const useRouter= require('./router/user.router')
 const authRouter = require("./router/auth.router")
 const productsRouter = require("./router/products.router")
 const cartRouter= require("./router/cart.router")
+const apiProductsRouter=require("./api/router/products.router")
 var cookieParser = require("cookie-parser");
 var mongoose = require("mongoose");
 
@@ -30,4 +31,5 @@ app.use('/users',authMiddleware.requireAuth, useRouter);
 app.use('/auth', authRouter)
 app.use('/products',productsRouter)
 app.use('/cart', cartRouter)
+app.use('/api', apiProductsRouter)
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -1,4 +1,5 @@
 extends ../layout/common
 block content
     h1.ml-3 CART
-    
+    each product in products
+        h2= product.name

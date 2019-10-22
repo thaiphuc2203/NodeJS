@@ -1,4 +1,5 @@
 var db= require('../db')
+const axios = require("axios");
 module.exports.addToCart=(req, res)=>{
     let productId=req.params.productId;
     let sessionId= req.signedCookies.sessionId;
@@ -18,5 +19,13 @@ module.exports.addToCart=(req, res)=>{
     res.redirect("/products")
 }
 module.exports.index=(req, res)=>{
-    res.render("cart/index")
-}
+    let products;
+     axios.get("http://localhost:3000/api/products").then(x => {
+      products=x.data;
+       res.render("cart/index", {
+         products: products
+       });
+     });
+     
+    
+}   
